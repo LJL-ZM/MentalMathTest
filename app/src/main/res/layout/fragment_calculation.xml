@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data tools:ignore="ExtraText">
+        <variable
+            name="vm"
+            type="com.example.mentalmathtesta.MyViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_main_gradient"
+        tools:context=".CalculationFragment">
+
+        <!-- 顶部留白和分区 -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.06" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.24" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.36" />
+
+        <!-- 四行按钮的顶部 guideline，等距分布 -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.46" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.56" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.66" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.76" />
+
+        <!-- 左右安全边距 -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="40dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="40dp" />
+
+        <!-- 题目卡片 -->
+        <LinearLayout
+            android:id="@+id/question_card"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_question_card"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:padding="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toStartOf="@+id/guideline16"
+            app:layout_constraintStart_toStartOf="@+id/guideline15"
+            app:layout_constraintTop_toTopOf="@+id/guideline2">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="@{vm.questionText}"
+                android:textColor="#1F2937"
+                android:textSize="@dimen/huge_size"
+                android:textStyle="bold"
+                tools:text="7 × 8 = ?" />
+        </LinearLayout>
+
+        <!-- 你的答案 -->
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:letterSpacing="0.05"
+            android:text="@string/your_answer"
+            android:textColor="#6B7280"
+            android:textSize="@dimen/big_size"
+            app:layout_constraintBottom_toTopOf="@+id/guideline9"
+            app:layout_constraintEnd_toStartOf="@+id/guideline16"
+            app:layout_constraintStart_toStartOf="@+id/guideline15"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            tools:text="your answer?" />
+
+        <!-- 第一行 1 2 3 -->
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/btn_key_number"
+            android:fontFamily="sans-serif-medium"
+            android:stateListAnimator="@null"
+            android:text="1"
+            android:textAllCaps="false"
+            android:textColor="#1E293B"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/button2"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="@id/guideline15"
+            app:layout_constraintTop_toTopOf="@id/guideline10"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/btn_key_number"
+            android:fontFamily="sans-serif-medium"
+            android:stateListAnimator="@null"
+            android:text="2"
+            android:textAllCaps="false"
+            android:textColor="#1E293B"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/button3"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/button1"
+            app:layout_constraintTop_toTopOf="@id/guideline10"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/btn_key_number"
+            android:fontFamily="sans-serif-medium"
+            android:stateListAnimator="@null"
+            android:text="3"
+            android:textAllCaps="false"
+            android:textColor="#1E293B"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/guideline16"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/button2"
+            app:layout_constraintTop_toTopOf="@id/guideline10"
+            tools:ignore="HardcodedText" />
+
+        <!-- 第二行 4 5 6 -->
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/btn_key_number"
+            android:fontFamily="sans-serif-medium"
+            android:stateListAnimator="@null"
+            android:text="4"
+            android:textAllCaps="false"
+            android:textColor="#1E293B"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/button5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="@id/guideline15"
+            app:layout_constraintTop_toTopOf="@id/guideline11"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/btn_key_number"
+            android:fontFamily="sans-serif-medium"
+            android:stateListAnimator="@null"
+            android:text="5"
+            android:textAllCaps="false"
+            android:textColor="#1E293B"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/button6"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/button4"
+            app:layout_constraintTop_toTopOf="@id/guideline11"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/btn_key_number"
+            android:fontFamily="sans-serif-medium"
+            android:stateListAnimator="@null"
+            android:text="6"
+            android:textAllCaps="false"
+            android:textColor="#1E293B"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/guideline16"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/button5"
+            app:layout_constraintTop_toTopOf="@id/guideline11"
+            tools:ignore="HardcodedText" />
+
+        <!-- 第三行 7 8 9 -->
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/btn_key_number"
+            android:fontFamily="sans-serif-medium"
+            android:stateListAnimator="@null"
+            android:text="7"
+            android:textAllCaps="false"
+            android:textColor="#1E293B"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/button8"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="@id/guideline15"
+            app:layout_constraintTop_toTopOf="@id/guideline12"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/btn_key_number"
+            android:fontFamily="sans-serif-medium"
+            android:stateListAnimator="@null"
+            android:text="8"
+            android:textAllCaps="false"
+            android:textColor="#1E293B"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/button9"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/button7"
+            app:layout_constraintTop_toTopOf="@id/guideline12"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/btn_key_number"
+            android:fontFamily="sans-serif-medium"
+            android:stateListAnimator="@null"
+            android:text="9"
+            android:textAllCaps="false"
+            android:textColor="#1E293B"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/guideline16"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/button8"
+            app:layout_constraintTop_toTopOf="@id/guideline12"
+            tools:ignore="HardcodedText" />
+
+        <!-- 第四行 c 0 ok：同样约束到 guideline13，等距分布 -->
+        <Button
+            android:id="@+id/button_c"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/btn_key_clear"
+            android:fontFamily="sans-serif-medium"
+            android:stateListAnimator="@null"
+            android:text="@string/btn_clear"
+            android:textAllCaps="false"
+            android:textColor="#B91C1C"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/button_0"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="@id/guideline15"
+            app:layout_constraintTop_toTopOf="@id/guideline13" />
+
+        <Button
+            android:id="@+id/button_0"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/btn_key_number"
+            android:fontFamily="sans-serif-medium"
+            android:stateListAnimator="@null"
+            android:text="0"
+            android:textAllCaps="false"
+            android:textColor="#1E293B"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/button_ok"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/button_c"
+            app:layout_constraintTop_toTopOf="@id/guideline13"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/button_ok"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/btn_key_ok"
+            android:fontFamily="sans-serif-medium"
+            android:stateListAnimator="@null"
+            android:text="@string/btn_ok"
+            android:textAllCaps="false"
+            android:textColor="#047857"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/guideline16"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/button_0"
+            app:layout_constraintTop_toTopOf="@id/guideline13" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 字体大小 sp：用于文字，跟随系统字体设置 -->
+    <dimen name="huge_size">50sp</dimen>
+    <dimen name="big_size">35sp</dimen>
+    <dimen name="min_size">14sp</dimen>
+
+    <!-- 如果你还需要其他字号可以继续加 -->
+    <dimen name="normal_size">18sp</dimen>
+    <dimen name="small_size">12sp</dimen>
+</resources>

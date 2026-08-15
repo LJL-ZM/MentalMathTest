@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MentalMathTestA</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="max_score">maxScore:%d</string>
+    <string name="start_challenge">Start Challenge!</string>
+    <string name="mental_math_image" translatable="false">Mental math image</string>
+    <string name="your_answer">Your Answer?</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_clear">C</string>
+    <string name="you_are_win">You are win!</string>
+    <string name="you_are_lose">You are lose!</string>
+    <string name="your_score">Your score : %d</string>
+    <string name="btn_exit">Exit</string>>
+</resources>

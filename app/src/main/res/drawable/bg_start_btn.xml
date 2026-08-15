@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--正常状态-->
+    <item android:state_pressed="false">
+        <shape android:shape="rectangle">
+            <solid android:color="#673AB7"/>
+            <corners android:radius="32dp"/>
+            <padding android:left="16dp" android:right="16dp" android:top="14dp" android:bottom="14dp"/>
+        </shape>
+    </item>
+    <!--点击按压状态，颜色变暗反馈-->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#512DA8"/>
+            <corners android:radius="32dp"/>
+            <padding android:left="16dp" android:right="16dp" android:top="14dp" android:bottom="14dp"/>
+        </shape>
+    </item>
+</selector>
