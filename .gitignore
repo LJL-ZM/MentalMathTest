@@ -1,0 +1,44 @@
+# 编译输出产物
+*.apk
+*.aab
+*.aar
+*.ap_
+*.dex
+*.class
+
+# 所有模块的build文件夹
+build/
+*/build/
+
+# Gradle缓存与生成文件
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# Android Studio本地配置（本机SDK路径，绝对不要提交）
+local.properties
+
+# Android Studio IDE配置
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# 导航编辑器、录屏截图缓存
+.navigation/
+captures/
+
+# Kotlin编译缓存
+*.kotlin_module
+
+# 日志
+*.log
+
+# 虚拟设备
+.avd/
+
+# 系统杂项
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
